@@ -1,3 +1,4 @@
+/* General styles */
 body {
     background-color: #000000;
     color: #888888;
@@ -44,6 +45,11 @@ header h1 {
     margin: 0;
     position: relative;
     z-index: 3;
+    transition: color 0.3s ease;
+}
+
+header h1:hover {
+    color: #007bff;
 }
 
 nav {
@@ -73,6 +79,7 @@ nav ul li a {
     font-size: 1.2em;
     padding: 15px;
     display: block;
+    transition: color 0.3s ease;
 }
 
 nav ul li a:hover {
@@ -92,17 +99,27 @@ section h2 {
     color: #ffffff;
     font-size: 2.5em;
     margin-bottom: 20px;
+    transition: color 0.3s ease;
+}
+
+section h2:hover {
+    color: #007bff;
 }
 
 .carousel {
     position: relative;
     max-width: 800px;
     margin: auto;
+    overflow: hidden;
+    border-radius: 10px;
+    border: 2px solid #444444;
 }
 
 .carousel-item {
     display: none;
     text-align: center;
+    padding: 20px;
+    transition: transform 0.5s ease-in-out;
 }
 
 .carousel-item.active {
@@ -119,6 +136,8 @@ section h2 {
     border: none;
     font-size: 2em;
     cursor: pointer;
+    padding: 10px;
+    transition: background-color 0.3s ease;
 }
 
 .carousel-control-prev {
@@ -127,6 +146,11 @@ section h2 {
 
 .carousel-control-next {
     right: 0;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
 }
 
 .project-image {
@@ -148,6 +172,7 @@ footer a {
     text-decoration: none;
     margin: 0 10px;
     font-size: 1.5em;
+    transition: color 0.3s ease;
 }
 
 footer a:hover {
@@ -176,6 +201,11 @@ footer a:hover {
     max-width: 500px;
     color: #ffffff;
     border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.modal-content:hover {
+    transform: scale(1.02);
 }
 
 .close {
@@ -183,13 +213,12 @@ footer a:hover {
     float: right;
     font-size: 28px;
     font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
 }
 
-.close:hover,
-.close:focus {
+.close:hover {
     color: #ffffff;
-    text-decoration: none;
-    cursor: pointer;
 }
 
 .form-group {
@@ -211,16 +240,19 @@ footer a:hover {
     color: #ffffff;
 }
 
-button[type="submit"] {
+button[type="submit"],
+button#contactButton {
     background-color: #007bff;
     color: #ffffff;
     border: none;
     padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-button[type="submit"]:hover {
+button[type="submit"]:hover,
+button#contactButton:hover {
     background-color: #0056b3;
 }
 
