@@ -6,6 +6,7 @@ body {
     padding: 0;
     scroll-behavior: smooth;
 }
+
 header {
     position: relative;
     height: 100vh;
@@ -15,6 +16,7 @@ header {
     text-align: center;
     overflow: hidden;
 }
+
 header img {
     position: absolute;
     top: 0;
@@ -24,6 +26,7 @@ header img {
     object-fit: cover;
     z-index: 1;
 }
+
 header::before {
     content: "";
     position: absolute;
@@ -34,6 +37,7 @@ header::before {
     background: rgba(0, 0, 0, 0.5); /* Dark overlay */
     z-index: 2;
 }
+
 header h1 {
     font-size: 4em;
     color: #ffffff;
@@ -41,6 +45,7 @@ header h1 {
     position: relative;
     z-index: 3;
 }
+
 nav {
     position: fixed;
     top: 0;
@@ -49,6 +54,7 @@ nav {
     border-bottom: 2px solid #333333;
     z-index: 1000;
 }
+
 nav ul {
     list-style-type: none;
     padding: 0;
@@ -56,9 +62,11 @@ nav ul {
     display: flex;
     justify-content: center;
 }
+
 nav ul li {
     margin: 0 15px;
 }
+
 nav ul li a {
     text-decoration: none;
     color: #888888;
@@ -66,42 +74,180 @@ nav ul li a {
     padding: 15px;
     display: block;
 }
+
 nav ul li a:hover {
     color: #ffffff;
 }
+
 .content {
     padding: 50px 20px;
 }
+
 section {
     margin: 40px 0;
     text-align: center;
 }
+
 section h2 {
     color: #ffffff;
     font-size: 2.5em;
     margin-bottom: 20px;
 }
+
+.carousel {
+    position: relative;
+    max-width: 800px;
+    margin: auto;
+}
+
 .carousel-item {
+    display: none;
     text-align: center;
 }
+
+.carousel-item.active {
+    display: block;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #ffffff;
+    border: none;
+    font-size: 2em;
+    cursor: pointer;
+}
+
+.carousel-control-prev {
+    left: 0;
+}
+
+.carousel-control-next {
+    right: 0;
+}
+
 .project-image {
     max-width: 100%;
     height: auto;
     border-radius: 10px;
     margin-bottom: 20px;
 }
+
 footer {
     background-color: #000000;
     border-top: 2px solid #333333;
     padding: 20px;
     text-align: center;
 }
+
 footer a {
     color: #888888;
     text-decoration: none;
     margin: 0 10px;
     font-size: 1.5em;
 }
+
 footer a:hover {
     color: #ffffff;
+}
+
+/* Modal styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: #333333;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    color: #ffffff;
+    border-radius: 10px;
+}
+
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #ffffff;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #888;
+    border-radius: 5px;
+    background-color: #444444;
+    color: #ffffff;
+}
+
+button[type="submit"] {
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 3em;
+    }
+
+    .carousel-control-prev,
+    .carousel-control-next {
+        font-size: 1.5em;
+    }
+
+    .modal-content {
+        width: 90%;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    nav ul li a {
+        font-size: 1.5em;
+    }
 }
